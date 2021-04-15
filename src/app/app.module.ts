@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core';
 // declarations
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FactCreateComponent } from './posts/fact-create/fact-create.component';
-import { FactListComponent } from './posts/fact-list/fact-list.component';
+import { FactCreateComponent } from './facts/fact-create/fact-create.component';
+import { FactListComponent } from './facts/fact-list/fact-list.component';
 import { HeaderComponent } from './header/header.component';
 
 

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Fact } from './posts/fact.model';
+import { Fact } from './facts/fact.model';
 
 @Component({
   selector: 'app-root',
