@@ -1,0 +1,18 @@
+<mat-card>
+    <div>
+      <p>
+        {{this.factService.fact?.text}}
+      </p>
+    </div>
+    <hr>
+      <button (click)="onGetFact()" class="button1-style"
+      mat-raised-button
+      color = "primary"
+      type="submit">Next Fact
+      </button>
+      <button (click)="onSaveFact()" class="button2-style"
+      mat-raised-button
+      color = "primary"
+      type="submit">Save Fact
+      </button>
+</mat-card>
