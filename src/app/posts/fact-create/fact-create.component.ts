@@ -14,6 +14,6 @@ export class FactCreateComponent {
     this.factService.getFact();
   }
   onSaveFact(){
-     this.factService.addPost(this.factService.fact.type, this.factService.fact.text)
+     this.factService.addFact(this.factService.fact.type, this.factService.fact.text)
   }
 }

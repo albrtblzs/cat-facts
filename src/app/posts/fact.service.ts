@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 export class FactService{
   private facts: Fact[] = [];
   fact: Fact;
-  private postUpdated = new Subject<Fact[]>();
+  private factUpdated = new Subject<Fact[]>();
   private url: string = 'http://localhost:3000/cat-facts';
 
   constructor(private http: HttpClient){}
@@ -21,28 +21,28 @@ export class FactService{
 
   /*
     need to reach out backend
-    fetch the posts
-    store them in posts
+    fetch the facts
+    store them in factts
     fire out update listener to inform anyone interested in our app
   */
   // need to send a http request
-  getPosts(){
+  getFacts(){
     // specify the type of value which we will get back
     // the body of the response will be the object which has:
     //  - a message property and
-    //  - the posts property
+    //  - the facts property
 
     this.http.get<{message: string, facts: Fact[]}>(this.url)
     // subscirbe method: argument(new data, errors, when it completes)
     .subscribe((factData) => {
       this.facts = factData.facts;
       // need to inform our app and other parts of our app about this update
-      // pass the copy of the post in the following way
-      this.postUpdated.next([...this.facts]);
+      // pass the copy of the fact in the following way
+      this.factUpdated.next([...this.facts]);
     });
   }
 
-  addPost(type: string, text: string){
+  addFact(type: string, text: string){
     const fact: Fact = {
       id: null,
       type: type,
@@ -60,11 +60,11 @@ export class FactService{
       console.log(responseData.message);
       /* We will do this by adding these two calls in the subscribe method because this will execute asynchronously only one we got a success response.*/
       this.facts.push(fact);
-      this.postUpdated.next([...this.facts]);
+      this.factUpdated.next([...this.facts]);
     });
   }
 
-	getPostUpdateListener(){
-		return this.postUpdated.asObservable();
+	getFactUpdateListener(){
+		return this.factUpdated.asObservable();
 	}
 }
