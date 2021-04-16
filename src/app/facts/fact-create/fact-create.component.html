@@ -1,6 +1,10 @@
 <mat-card>
+  <br>
+  <div style="margin-bottom: 25px;">
+  <img mat-card-image class="img" src="http://www.commonchaos.com/wp-content/uploads/2011/07/happy-cat.jpg" alt="happy cat">
+  </div >
     <div>
-      <p>
+      <p class="fact-text">
         {{this.factService.fact?.text}}
       </p>
     </div>
@@ -15,4 +19,9 @@
       color = "primary"
       type="submit">Save Fact
       </button>
+      <div>
+        <p class="fact-message">
+          {{this.factService.message}}
+        </p>
+      </div>
 </mat-card>

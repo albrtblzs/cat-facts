@@ -1,11 +1,28 @@
 .button1-style{
   display: block;
   margin: auto;
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 .button2-style{
   display: block;
   margin: auto;
 }
+.fact-text{
+  text-align: center;
+  font-size: large;
+  font-weight: 300;
+}
 
+.fact-message{
+  text-align: center;
+  margin-top: 20px;
+}
 
+.img{
+  border-radius: 8px;
+  max-width: 60%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -1,10 +1,15 @@
 <mat-accordion multi="true" *ngIf="facts.length > 0">
-  <mat-expansion-panel *ngFor = "let fact of facts">
-    <mat-expansion-panel-header>
-      {{fact.type}}
+  <mat-expansion-panel>
+    <mat-expansion-panel-header class="title">
+      <mat-card-title class="mat-card-title">
+        Favorite Cat Facts
+      </mat-card-title>
     </mat-expansion-panel-header>
-    <p>{{fact.text}}</p>
-  </mat-expansion-panel>
+  <mat-card class="mat-card" *ngFor = "let fact of facts">
+        {{fact.text}}
+  </mat-card>
+</mat-expansion-panel>
 </mat-accordion>
 
 <p class = " info-text mat-body-1" *ngIf="facts.length <= 0">No fact added yet!</p>
+<br>

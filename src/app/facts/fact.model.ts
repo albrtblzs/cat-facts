@@ -1,5 +1,5 @@
 export interface Fact{
   id: string | null;
-  type:string;
+  type: string;
   text: string;
 }

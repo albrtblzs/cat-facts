@@ -14,6 +14,8 @@ export class FactListComponent implements OnInit, OnDestroy{
   constructor(public factService: FactService){}
 
   ngOnInit(){
+    this.factService.getFact();
+    this.factService.getFactFromDatabase();
     this.FactSub = this.factService.getFactUpdateListener()
     .subscribe((facts: Fact[]) => {
       this.facts = facts;
